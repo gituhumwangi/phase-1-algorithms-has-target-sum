@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for(let i = 0; i < array.length; i++) {
+    for(let j = i + 1; j < array.length; j++) {
+      const sumOfNum =  array[j] + array[i];
+  if (sumOfNum === target){
+    return true
+  }
+  }
 }
+return false
+  }
+
+
 
 /* 
   Write the Big O time complexity of your function here
+  Quadratic time Big O function, because it uses pairs
+  Create a nested loops
 */
 
 /* 
   Add your pseudocode here
+  Should use a for loop to iterate through the array to check if the two numbers can add up
+  to the given number
+  Should use Quadratic time Big O function 
+  Should use a condition to compare the sum of the two numbers if it adds up to the given input
+  Create a block of code used that adds up the two values
+
+
 */
 
 /*
@@ -29,6 +49,11 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", hasTargetSum([1, 2, 5], 4));
+
+  console.log("Expecting: false");
+  console.log("=>", hasTargetSum([1, 2, 5], 4))
+  
 }
 
 module.exports = hasTargetSum;
+
